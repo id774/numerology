@@ -1,0 +1,18 @@
+.span6
+  %table{:class => 'table table-bordered table-striped'}
+    %thead
+      %tr
+        %th{:style => "width: 150px;"} 項目
+        %th 内容
+    %tbody
+      %tr
+        %td 名前
+        %td= session[:name]
+      %tr
+        %td 誕生数
+        %td= session[:classify]
+
+  %p{:class=>"pull-left pager"}
+    = link_to "実装の説明", "http://blog.id774.net/post/2013/12/25/443/"
+  %p{:class=>"pull-right pager"}
+    = link_to "みんなの誕生数を見る", stories_path

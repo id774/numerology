@@ -1,0 +1,16 @@
+ja:
+  views:
+    pagination:
+      previous: "← 前ページ"
+      next: "次ページ →"
+      first: "最初"
+      last: "最後"
+      truncate: ""
+
+  activerecord:
+    attributes:
+      story:
+        name: "名前" #g
+        birthday: "生年月日" #g
+        classify: "誕生数" #g
+

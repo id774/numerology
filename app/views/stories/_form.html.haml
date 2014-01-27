@@ -1,0 +1,30 @@
+= form_for @story do |f|
+  -if @story.errors.any?
+    .alert.alert-message.block-message.error
+      %h3= "#{@story.errors.count} 件のエラーが発生したため、処理できませんでした。"
+      %ul
+        - @story.errors.full_messages.each do |msg|
+          %li= msg
+
+  .fieldset
+    .story
+      .row
+        .span6
+          %label 名前を入力してください
+          .input
+            = f.text_field :name
+            .help-inline
+              例: まはる
+
+          %label 生年月日 (半角数字 8 桁) を入力してください
+          .input
+            = f.text_field :birthday
+            .help-inline
+              例: 19930929
+
+            .form-actions
+              .input
+                = f.submit '送信する', :class => 'btn btn-primary'
+
+        = render 'description'
+

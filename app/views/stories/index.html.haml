@@ -1,0 +1,34 @@
+.page-header
+  %h2 一覧
+
+.admin-index
+  .container
+    .content
+      .row
+        .span10.offset1
+          %table{:class => 'table table-bordered table-striped'}
+            %thead
+              %tr
+                %th
+                  ID
+                %th
+                  名前
+                %th
+                  誕生数
+            %tbody
+              - @stories.each do |story|
+                - unless story.classify.to_i == 0
+                  %tr
+                    %td
+                      = story.id
+                    %td
+                      = story.name
+                    %td
+                      = link_to story.classify, stories_path(classify: story.classify)
+
+          = paginate @stories, :window => 8
+
+  %p{:class=>"pull-right pager"}
+    = link_to "みんなの数秘術に戻る", root_path
+  %p{:class=>"pull-left pager"}
+    = link_to "みんなの誕生数を見る", stories_path
